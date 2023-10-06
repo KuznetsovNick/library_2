@@ -1,0 +1,119 @@
+.add{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    bottom: 3%;
+    right: 30%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 191px;
+    height: 64px;
+    font-size: inherit;
+    font-family: inherit;
+
+}
+
+.add:hover{
+    transform: scale(1.1);
+    transition: 0.2s linear;
+}
+
+.cancel{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    bottom: 3%;
+    left: 30%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 191px;
+    height: 64px;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.cancel:hover{
+    transform: scale(1.1);
+    transition: 0.2s linear;
+}
+
+.book{
+    position: absolute;
+    top: calc(40% - 80px);
+    left: calc(50% - 150px);
+    width: 300px;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+}
+
+.author{
+    position: absolute;
+    top: 40%;
+    left: calc(50% - 150px);
+    width: 300px;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+}
+
+.year{
+    position: absolute;
+    top: calc(40% + 80px);
+    left: calc(50% - 150px);
+    width: 300px;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+}
+
+.frame{
+    position: absolute;
+    background-color: var(--color-gainsboro);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    color: var(--color-black);
+    font-size: var(--font-size-13xl);
+    font-family: var(--font-jost);
+}
+
+
+
+.library1,
+.logo-icon1 {
+    position: relative;
+    flex-shrink: 0;
+}
+.logo-icon1 {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+.library1 {
+    display: inline-block;
+    width: 196px;
+    height: 85px;
+}
+.logo-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-xl) var(--padding-xl) 1px;
+    gap: 10px;
+    font-size: 64px;
+}

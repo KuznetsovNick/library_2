@@ -1,0 +1,92 @@
+.book_info{
+    position: absolute;
+    visibility: hidden;
+    width: 200px;
+    height: 600px;
+    top: calc(55% - 300px);
+    left: 50%
+}
+
+.title, .author, .year, .owner, .return_date{
+    position: relative;
+    height: 45px;
+    width: 100px;
+    left: calc(50% - 50px);
+}
+
+.close{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 50px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 100px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.delete{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    bottom: 60px;
+    left: calc(50% - 50px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 100px;
+    font-family: inherit;
+    font-size: inherit;
+    color: crimson;
+}
+
+.issue{
+    visibility: hidden;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    bottom: 120px;
+    left: calc(50% - 50px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 100px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.return{
+    visibility: hidden;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    bottom: 120px;
+    left: calc(50% - 50px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 100px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.close:hover, .delete:hover{
+    transform: scale(1.1);
+    transition: 0.2s linear;
+}
+

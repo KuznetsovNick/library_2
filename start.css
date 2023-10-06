@@ -1,0 +1,54 @@
+.logo-icon {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+}
+.library,
+.logo-parent {
+    position: absolute;
+    height: 150px;
+}
+.library {
+    top: 0;
+    left: 160.6px;
+    display: inline-block;
+    width: 385.14px;
+}
+.logo-parent {
+    top: 300px;
+    left: calc(50% - 273px);
+    width: 545.74px;
+}
+#get_started {
+    position: absolute;
+    top: calc(50% + 209px);
+    left: calc(50% - 108px);
+    font-size: 40px;
+    text-align: center;
+    display: inline-block;
+    width: 250px;
+    height: 58px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+#get_started:hover{
+    transform: scale(1.1);
+    transition: 0.2s linear;
+}
+
+.frame-parent {
+    position: absolute;
+    background-color: #dbdbdb;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: left;
+    font-size: 128px;
+    color: var(--color-black);
+    font-family: var(--font-jost);
+}
