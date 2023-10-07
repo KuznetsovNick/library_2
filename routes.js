@@ -22,6 +22,9 @@ router.post("/list/update", (req, res) => {
 router.post("/list/sort_stock", (req, res) => {
     res.json(manager.sort_stock())
 })
+router.post("/list/sort_date", (req, res) => {
+    res.json(manager.sort_date())
+})
 router.get("/add_book_page", (req, res) => {
     res.send(pug.compileFile("add_book.pug", null)())
 })
@@ -29,8 +32,20 @@ router.post("/add_book_page", (req, res) => {
     manager.add_to_library(req.body)
     res.json(manager.send_library())
 })
+router.post("/redact_book", (req, res) => {
+    manager.redact_book(req.body)
+    res.json(manager.send_library())
+})
 router.post("/list/delete", (req, res) => {
     manager.delete_from_library(req.body)
+    res.json(manager.send_library())
+})
+router.post("/list/return", (req, res) => {
+    manager.return_book(req.body)
+    res.json(manager.send_library())
+})
+router.post("/list/issue", (req, res) => {
+    manager.issue_book(req.body)
     res.json(manager.send_library())
 })
 router.get("*", (req, res)=>{

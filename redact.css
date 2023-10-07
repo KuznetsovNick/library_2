@@ -1,4 +1,4 @@
-.issue_page{
+.redact{
     position: absolute;
     visibility: hidden;
     width: 200px;
@@ -7,28 +7,34 @@
     left: calc(50% + 100px);
 }
 
-.owner_input, .date_input{
+.title_redact, .author_redact, .year_redact{
     position: relative;
     width: 200px;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
-.owner_input{
+.title_redact{
     font-size: inherit;
     font-family: inherit;
     background-color: transparent;
     border: none;
 }
 
-.date_input{
+.author_redact{
     font-size: inherit;
     font-family: inherit;
     background-color: transparent;
     border: none;
 }
 
-.close_issue{
+.year_redact{
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+}
+
+.close_redact{
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -45,7 +51,7 @@
     font-size: inherit;
 }
 
-.accept_issue{
+.accept_redact{
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -62,21 +68,7 @@
     font-size: inherit;
 }
 
-.close_issue:hover, .accept_issue:hover{
+.close_redact:hover, .accept_redact:hover{
     transform: scale(1.1);
     transition: 0.2s linear;
-}
-
-#dialog{
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: lightgrey;
-    border-radius: 10%;
-    width: 300px;
-    height: 50px;
-    top: 10%;
-    left: calc(50% - 150px);
-    text-align: center;
 }

@@ -63,9 +63,20 @@
     font-size: inherit;
 }
 
-#stock:hover{
-    transform: scale(1.1);
-    transition: 0.2s linear;
+#sort_date{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: calc(45% - 300px);
+    left: calc(50% + 100px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .frame-root {
@@ -97,7 +108,8 @@
 }
 
 .div1:hover, .div2:hover, .div3:hover, .div4:hover, .div5:hover,
-.div6:hover, .div7:hover, .div8:hover, .div9:hover, .div10:hover{
+.div6:hover, .div7:hover, .div8:hover, .div9:hover, .div10:hover,
+#stock:hover, #sort_date:hover{
     transform: scale(1.1);
     transition: 0.2s linear;
 }

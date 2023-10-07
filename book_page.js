@@ -76,6 +76,22 @@ function cancel_adding(){
         .then(res => document.location.href='/list')
 }
 
+function confirm_redact(){
+    let author = document.getElementsByClassName("author_redact").item(0).value
+    let title = document.getElementsByClassName("title_redact").item(0).value
+    let year = document.getElementsByClassName("year_redact").item(0).value
+
+    let data = {
+        id: selected_book,
+        title: title,
+        author: author,
+        year: year
+    }
+
+    sendRequest("POST", "/redact_book", data)
+        .then(res => document.location.href='/list')
+}
+
 function next_page(){
     if(Math.floor(books.length/(page*list_size)) > 0){
         page++
@@ -100,29 +116,78 @@ function sort_stock(){
         })
 }
 
+function sort_date(){
+    sendRequest("POST", "/list/sort_date")
+        .then(res => res.json())
+        .then(json => {
+            page = 1
+            books = JSON.parse(json)
+            fill_table()
+        })
+}
+
 function choose_book(div_num){
+    close_redact_page()
+    close_issue_page()
     let div_ind = div_num - 1
     let div_list = document.getElementsByClassName("parent").item(0)
     let div_info = document.getElementsByClassName("book_info").item(0)
+    let div_issue = document.getElementsByClassName("issue").item(0)
+    let div_return = document.getElementsByClassName("return").item(0)
+    div_issue.style.visibility = "hidden"
+    div_return.style.visibility = "hidden"
+
     div_list.style.left = "calc(50% - 200px)"
     div_info.style.visibility = "visible"
 
     let title = document.getElementsByClassName("title").item(0)
     let author = document.getElementsByClassName("author").item(0)
     let year = document.getElementsByClassName("year").item(0)
+    let owner = document.getElementsByClassName("owner").item(0)
+    let date = document.getElementsByClassName("return_date").item(0)
 
     title.innerHTML = books[(page-1)*list_size + div_ind]["title"]
     author.innerHTML = books[(page-1)*list_size + div_ind]["author"]
     year.innerHTML = books[(page-1)*list_size + div_ind]["year"]
+
+    if(books[(page-1)*list_size + div_ind]["owner"]){
+        owner.innerHTML = books[(page-1)*list_size + div_ind]["owner"]
+    } else{
+        owner.innerHTML = "-"
+    }
+
+    if(books[(page-1)*list_size + div_ind]["returnDate"]){
+        date.innerHTML = books[(page-1)*list_size + div_ind]["returnDate"]
+    } else{
+        date.innerHTML = "-"
+    }
+
     selected_book = books[(page-1)*list_size + div_ind]["id"]
+
+    if(!books[(page-1)*list_size + div_ind]["owner"]){
+        div_issue.style.visibility = "visible"
+    }
+    else{
+        div_return.style.visibility = "visible"
+    }
 }
 
 function close_book_page(){
+    close_redact_page()
+    close_issue_page()
     let div_list = document.getElementsByClassName("parent").item(0)
     let div_info = document.getElementsByClassName("book_info").item(0)
 
-    div_list.style.left = "calc(50% - 100px)"
+    let div_issue = document.getElementsByClassName("issue").item(0)
+    let div_return = document.getElementsByClassName("return").item(0)
+    div_issue.style.visibility = "hidden"
+    div_return.style.visibility = "hidden"
+
     div_info.style.visibility = "hidden"
+
+    div_list.style.left = "calc(50% - 100px)"
+
+    let d = document.getElementById("dialog").open = false
 }
 
 function delete_book(){
@@ -135,4 +200,83 @@ function delete_book(){
                 update_table()
             })
     }
+}
+
+function issue_page(){
+    let div_list = document.getElementsByClassName("parent").item(0)
+    let div_info = document.getElementsByClassName("book_info").item(0)
+    let div_issue = document.getElementsByClassName("issue_page").item(0)
+
+
+    div_list.style.left = "calc(50% - 300px)"
+    div_info.style.left = "calc(50% - 100px)"
+    div_issue.style.visibility = "visible"
+}
+
+function accept_issue(){
+    let owner = document.getElementsByClassName("owner_input").item(0)
+    let date = document.getElementsByClassName("date_input").item(0)
+    if(owner.value && date.value){
+        let data = {id: selected_book, owner: owner.value, date: date.value}
+        sendRequest("POST", "/list/issue", data)
+            .then(res => {
+                document.location.href = '/list'
+                update_table()
+            })
+    }
+}
+
+function return_book(){
+    let data = {id: selected_book}
+    sendRequest("POST", "/list/return", data)
+        .then(res => {
+            document.location.href = '/list'
+            update_table()
+        })
+}
+
+function close_issue_page(){
+    let div_list = document.getElementsByClassName("parent").item(0)
+    let div_info = document.getElementsByClassName("book_info").item(0)
+    let div_issue = document.getElementsByClassName("issue_page").item(0)
+
+    div_issue.style.visibility = "hidden"
+    div_list.style.left = "calc(50% - 200px)"
+    div_info.style.left = "50%"
+}
+
+function dialog() {
+    let d = document.getElementById("dialog")
+    let owner = document.getElementsByClassName("owner").item(0).innerHTML
+    if(d.open){
+        d.open = false
+    } else {
+        if (owner != "-") {
+            d.innerHTML = `Info about ${owner}`
+        } else {
+            d.innerHTML = "-"
+        }
+        d.open = true
+    }
+}
+
+function open_redact(){
+    let div_list = document.getElementsByClassName("parent").item(0)
+    let div_info = document.getElementsByClassName("book_info").item(0)
+    let div_redact = document.getElementsByClassName("redact").item(0)
+
+
+    div_list.style.left = "calc(50% - 300px)"
+    div_info.style.left = "calc(50% - 100px)"
+    div_redact.style.visibility = "visible"
+}
+
+function close_redact_page(){
+    let div_list = document.getElementsByClassName("parent").item(0)
+    let div_info = document.getElementsByClassName("book_info").item(0)
+    let div_redact = document.getElementsByClassName("redact").item(0)
+
+    div_redact.style.visibility = "hidden"
+    div_list.style.left = "calc(50% - 200px)"
+    div_info.style.left = "50%"
 }
