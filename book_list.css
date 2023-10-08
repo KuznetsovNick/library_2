@@ -53,7 +53,7 @@
     cursor: pointer;
     position: absolute;
     top: calc(45% - 300px);
-    left: calc(50% - 200px);
+    left: calc(50% - 300px);
     text-align: center;
     display: flex;
     align-items: center;
@@ -70,6 +70,22 @@
     position: absolute;
     top: calc(45% - 300px);
     left: calc(50% + 100px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+#reset{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: calc(45% - 300px);
+    left: calc(50% - 100px);
     text-align: center;
     display: flex;
     align-items: center;
@@ -109,7 +125,7 @@
 
 .div1:hover, .div2:hover, .div3:hover, .div4:hover, .div5:hover,
 .div6:hover, .div7:hover, .div8:hover, .div9:hover, .div10:hover,
-#stock:hover, #sort_date:hover{
+#stock:hover, #sort_date:hover, #reset:hover{
     transform: scale(1.1);
     transition: 0.2s linear;
 }

@@ -72,7 +72,7 @@ function confirm_adding(){
 }
 
 function cancel_adding(){
-    sendRequest("GET", "/list/")
+    sendRequest("GET", "/list")
         .then(res => document.location.href='/list')
 }
 
@@ -195,9 +195,12 @@ function delete_book(){
     if(result){
         let data = {id: selected_book}
         sendRequest("POST", "/list/delete", data)
-            .then(res => {
-                document.location.href = '/list'
-                //update_table()
+            .then(res => res.json())
+            .then(json => {
+                page = 1
+                books = JSON.parse(json)
+                close_book_page()
+                fill_table()
             })
     }
 }
@@ -219,9 +222,12 @@ function accept_issue(){
     if(owner.value && date.value){
         let data = {id: selected_book, owner: owner.value, date: date.value}
         sendRequest("POST", "/list/issue", data)
-            .then(res => {
-                document.location.href = '/list'
-                update_table()
+            .then(res => res.json())
+            .then(json => {
+                page = 1
+                books = JSON.parse(json)
+                close_book_page()
+                fill_table()
             })
     }
 }
@@ -229,9 +235,12 @@ function accept_issue(){
 function return_book(){
     let data = {id: selected_book}
     sendRequest("POST", "/list/return", data)
-        .then(res => {
-            document.location.href = '/list'
-            update_table()
+        .then(res => res.json())
+        .then(json => {
+            page = 1
+            books = JSON.parse(json)
+            close_book_page()
+            fill_table()
         })
 }
 

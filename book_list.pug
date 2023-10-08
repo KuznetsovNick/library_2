@@ -49,11 +49,16 @@ head
         button(class="accept_redact" onclick='confirm_redact()') redact
 
     dialog(id="dialog")
+
     button(class="prev" onclick='prev_page()') prev
     button(class="next" onclick='next_page()') next
+
     button(id="stock" onclick='sort_stock()') Stock
     button(id="sort_date" onclick='sort_date()') Date
+    button(id="reset" onclick='update_table()') Reset
+
     button(id="add_book" onclick='add_book_page()') Add book
+
     script(src="book_page.js")
     script.
         update_table()
