@@ -16,7 +16,7 @@ class Manager{
         this.books = JSON.parse(this.fs.readFileSync('library.json', 'utf8'));
     }
     write_to_file(){
-        this.fs.writeFileSync("library.json", JSON.stringify(this.books),() => {})
+        this.fs.writeFileSync("library.json", JSON.stringify(this.books))
     }
 
     add_to_library(body){

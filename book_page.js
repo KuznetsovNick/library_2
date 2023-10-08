@@ -28,6 +28,7 @@ function sendRequest(type, URL, data=null) {
     if(data){
         data = JSON.stringify(data)
     }
+
     return fetch(
         URL,
         {
@@ -206,6 +207,8 @@ function delete_book(){
 }
 
 function issue_page(){
+    document.getElementsByClassName("redact").item(0).style.visibility = "hidden"
+
     let div_list = document.getElementsByClassName("parent").item(0)
     let div_info = document.getElementsByClassName("book_info").item(0)
     let div_issue = document.getElementsByClassName("issue_page").item(0)
@@ -270,6 +273,8 @@ function dialog() {
 }
 
 function open_redact(){
+    document.getElementsByClassName("issue_page").item(0).style.visibility = "hidden"
+
     let div_list = document.getElementsByClassName("parent").item(0)
     let div_info = document.getElementsByClassName("book_info").item(0)
     let div_redact = document.getElementsByClassName("redact").item(0)
@@ -288,4 +293,9 @@ function close_redact_page(){
     div_redact.style.visibility = "hidden"
     div_list.style.left = "calc(50% - 200px)"
     div_info.style.left = "50%"
+}
+
+function start_page(){
+    sendRequest("GET", "/")
+        .then(res => document.location.href='/')
 }

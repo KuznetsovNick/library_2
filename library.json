@@ -1,1 +1,130 @@
-[{"id":1,"author":"Jack","title":"Math","year":"1790","owner":"Nick","returnDate":"2023-10-07"},{"id":2,"author":"Maria","title":"Physics","year":"1812","owner":null,"returnDate":null},{"id":3,"author":"Remarque","title":"English","year":"2015","owner":null,"returnDate":null},{"title":"HH","author":"fasa","year":"1","id":4,"owner":"Nick","returnDate":"2023-10-15"}]
+[
+  {
+    "id": 1,
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "owner": null,
+    "returnDate": null,
+    "year": 1869
+  },
+  {
+    "id": 2,
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "owner": null,
+    "returnDate": null,
+    "year": 1866
+  },
+  {
+    "id": 3,
+    "title": "1984",
+    "author": "George Orwell",
+    "owner": null,
+    "returnDate": null,
+    "year": 1949
+  },
+  {
+    "id": 4,
+    "title": "The Master and Margarita",
+    "author": "Mikhail Bulgakov",
+    "owner": null,
+    "returnDate": null,
+    "year": 1967
+  },
+  {
+    "id": 5,
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "owner": null,
+    "returnDate": null,
+    "year": 1877
+  },
+  {
+    "id": 6,
+    "title": "Harry Potter",
+    "author": "J.K. Rowling",
+    "owner": null,
+    "returnDate": null,
+    "year": 1997
+  },
+  {
+    "id": 7,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "owner": null,
+    "returnDate": null,
+    "year": 1925
+  },
+  {
+    "id": 8,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "owner": null,
+    "returnDate": null,
+    "year": 1960
+  },
+  {
+    "id": 9,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "owner": null,
+    "returnDate": null,
+    "year": 1813
+  },
+  {
+    "id": 10,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "owner": null,
+    "returnDate": null,
+    "year": 1951
+  },
+  {
+    "id": 11,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "owner": null,
+    "returnDate": null,
+    "year": 1954
+  },
+  {
+    "id": 12,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "owner": null,
+    "returnDate": null,
+    "year": 1932
+  },
+  {
+    "id": 13,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "owner": null,
+    "returnDate": null,
+    "year": 1937
+  },
+  {
+    "id": 14,
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "owner": null,
+    "returnDate": null,
+    "year": 1851
+  },
+  {
+    "id": 15,
+    "title": "The Odyssey",
+    "author": "Homer",
+    "owner": null,
+    "returnDate": null,
+    "year": "8th century BC"
+  },
+  {
+    "id": 16,
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "owner": null,
+    "returnDate": null,
+    "year": 1967
+  }
+]

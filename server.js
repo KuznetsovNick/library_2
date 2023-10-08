@@ -4,8 +4,9 @@ const server = express()
 
 server.use(express.urlencoded({extended: true}));
 server.use(express.json());
-//server.use(bodyParser.urlencoded({extended: true}));
-//server.use(bodyParser.json());
+
+const file_upload = require("express-fileupload");
+server.use(file_upload());
 
 server.set("view engine", "pug")
 

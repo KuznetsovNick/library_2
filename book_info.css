@@ -1,7 +1,8 @@
 .book_info{
+    cursor: pointer;
     position: absolute;
     visibility: hidden;
-    width: 200px;
+    width: 300px;
     height: 600px;
     top: calc(55% - 300px);
     left: 50%;
@@ -10,9 +11,10 @@
 .title, .author, .year, .owner, .return_date{
     position: relative;
     height: 45px;
-    width: 100px;
+    width: 300px;
     left: calc(50% - 50px);
     text-align: center;
+    font-size: 25px;
 }
 
 .return_date{
