@@ -197,7 +197,7 @@ function delete_book(){
         sendRequest("POST", "/list/delete", data)
             .then(res => {
                 document.location.href = '/list'
-                update_table()
+                //update_table()
             })
     }
 }
