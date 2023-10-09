@@ -138,7 +138,10 @@ function choose_book(div_num){
     div_issue.style.visibility = "hidden"
     div_return.style.visibility = "hidden"
 
-    div_list.style.left = "calc(50% - 200px)"
+    if(div_info.style.visibility == "hidden") {
+        move_animation(div_list, 150, 0)
+    }
+    //div_list.style.left = "calc(50% - 300px)"
     div_info.style.visibility = "visible"
 
     let title = document.getElementsByClassName("title").item(0)
@@ -183,10 +186,10 @@ function close_book_page(){
     let div_return = document.getElementsByClassName("return").item(0)
     div_issue.style.visibility = "hidden"
     div_return.style.visibility = "hidden"
-
     div_info.style.visibility = "hidden"
 
-    div_list.style.left = "calc(50% - 100px)"
+    div_list.style.left = "calc(50% - 150px)"
+    move_animation(div_list, -150, 0)
 
     let d = document.getElementById("dialog").open = false
 }
@@ -207,16 +210,20 @@ function delete_book(){
 }
 
 function issue_page(){
-    document.getElementsByClassName("redact").item(0).style.visibility = "hidden"
-
     let div_list = document.getElementsByClassName("parent").item(0)
     let div_info = document.getElementsByClassName("book_info").item(0)
     let div_issue = document.getElementsByClassName("issue_page").item(0)
+    let div_redact = document.getElementsByClassName("redact").item(0)
 
+    if(div_redact.style.visibility == "hidden" && div_issue.style.visibility == "hidden") {
+        move_animation(div_list, 150, 0)
+        move_animation(div_info, 150, 0)
+    }
 
-    div_list.style.left = "calc(50% - 300px)"
-    div_info.style.left = "calc(50% - 100px)"
+    div_list.style.left = "calc(50% - 450px)"
+    div_info.style.left = "calc(50% - 150px)"
     div_issue.style.visibility = "visible"
+    div_redact.style.visibility = "hidden"
 }
 
 function accept_issue(){
@@ -252,8 +259,13 @@ function close_issue_page(){
     let div_info = document.getElementsByClassName("book_info").item(0)
     let div_issue = document.getElementsByClassName("issue_page").item(0)
 
+    if(div_issue.style.visibility == "visible") {
+        move_animation(div_list, -150, 0)
+        move_animation(div_info, -150, 0)
+    }
+
     div_issue.style.visibility = "hidden"
-    div_list.style.left = "calc(50% - 200px)"
+    div_list.style.left = "calc(50% - 300px)"
     div_info.style.left = "50%"
 }
 
@@ -273,15 +285,19 @@ function dialog() {
 }
 
 function open_redact(){
-    document.getElementsByClassName("issue_page").item(0).style.visibility = "hidden"
-
-    let div_list = document.getElementsByClassName("parent").item(0)
+let div_list = document.getElementsByClassName("parent").item(0)
     let div_info = document.getElementsByClassName("book_info").item(0)
     let div_redact = document.getElementsByClassName("redact").item(0)
+    let div_issue = document.getElementsByClassName("issue_page").item(0)
 
+    if(div_redact.style.visibility == "hidden" && div_issue.style.visibility == "hidden") {
+        move_animation(div_list, 150, 0)
+        move_animation(div_info, 150, 0)
+    }
 
-    div_list.style.left = "calc(50% - 300px)"
-    div_info.style.left = "calc(50% - 100px)"
+    div_list.style.left = "calc(50% - 450px)"
+    div_info.style.left = "calc(50% - 150px)"
+    div_issue.style.visibility = "hidden"
     div_redact.style.visibility = "visible"
 }
 
@@ -290,12 +306,30 @@ function close_redact_page(){
     let div_info = document.getElementsByClassName("book_info").item(0)
     let div_redact = document.getElementsByClassName("redact").item(0)
 
+    if(div_redact.style.visibility == "visible") {
+        move_animation(div_list, -150, 0)
+        move_animation(div_info, -150, 0)
+    }
+
     div_redact.style.visibility = "hidden"
-    div_list.style.left = "calc(50% - 200px)"
+    div_list.style.left = "calc(50% - 300px)"
     div_info.style.left = "50%"
+
 }
 
 function start_page(){
     sendRequest("GET", "/")
         .then(res => document.location.href='/')
+}
+
+function move_animation(div, x0, x1){
+    div.animate([
+        // key frames
+        { transform: `translateX(${x0}px)` },
+        { transform: `translateX(${x1}px)` }
+    ], {
+        // sync options
+        duration: 500,
+        iterations: 1
+    })
 }

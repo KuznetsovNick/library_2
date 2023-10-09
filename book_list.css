@@ -47,7 +47,7 @@
     cursor: pointer;
     position: absolute;
     top: calc(45% - 300px);
-    left: calc(50% - 300px);
+    left: calc(50% - 242px);
     text-align: center;
     display: flex;
     align-items: center;
@@ -63,7 +63,7 @@
     cursor: pointer;
     position: absolute;
     top: calc(45% - 300px);
-    left: calc(50% + 100px);
+    left: calc(50% + 200px);
     text-align: center;
     display: flex;
     align-items: center;
@@ -79,7 +79,7 @@
     cursor: pointer;
     position: absolute;
     top: calc(45% - 300px);
-    left: calc(50% - 100px);
+    left: calc(50% - 42px);
     text-align: center;
     display: flex;
     align-items: center;

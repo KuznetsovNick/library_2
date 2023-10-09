@@ -12,14 +12,8 @@
     position: relative;
     height: 45px;
     width: 300px;
-    left: calc(50% - 50px);
     text-align: center;
     font-size: 25px;
-}
-
-.return_date{
-    width: 200px;
-    left: calc(50% - 100px);
 }
 
 .owner{
